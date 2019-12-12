@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/appFragment"
+    tools:context=".ui.newGame.NewGameFragment"
+    android:padding="8dp">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New game fragment"
+        android:id="@+id/textView_title"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_newGame"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_title"
+        app:layout_constraintBottom_toTopOf="@id/layout_navBar">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView
+                    android:text="Game type : "
+                    android:layout_column="1"></TextView>
+            </TableRow>
+            <TableRow>
+                <Spinner
+
+                    android:minHeight="50dp"
+                    android:id="@+id/spinner_game_type"
+                    android:layout_column="1"
+                    android:minWidth="250dp">
+                                    </Spinner>
+
+            </TableRow>
+        </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_navBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_newGame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <Button
+            android:id="@+id/button_back"
+            style="@style/welcomeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 	&lt;"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <Button
+            android:id="@+id/button_ok"
+            style="@style/welcomeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

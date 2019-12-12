@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MessagingActivity">
+    <TextView
+        android:layout_margin="24dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MESSAGING VIEW : "
+        android:textSize="24dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="8dp"
+        android:id="@+id/header_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+
+            android:id="@+id/phone_nb_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone nb : "
+            android:textSize="32dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:layout_marginBottom="8dp"
+
+            android:textSize="32dp"
+            android:layout_margin="16dp"
+            android:id="@+id/display_phone_nb_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="20dp"
+            app:layout_constraintTop_toBottomOf="@id/phone_nb_text_view"
+            />
+        <TextView
+
+            android:id="@+id/mail_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mail : "
+            android:textSize="32dp"
+
+            app:layout_constraintTop_toBottomOf="@id/display_phone_nb_text_view"
+            />
+        <TextView
+            android:layout_marginBottom="8dp"
+
+            android:textSize="32dp"
+            android:layout_margin="16dp"
+            android:id="@+id/display_mail_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="20dp"
+            app:layout_constraintTop_toBottomOf="@id/mail_text_view"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/body_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout">
+        <TextView
+
+            android:id="@+id/message_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:textSize="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/display_message"
+            />
+        <TextView
+
+            android:text="message text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:gravity="center"
+            android:id="@+id/display_message"
+            app:layout_constraintTop_toBottomOf="@id/message_text_view"/>
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@id/display_message"
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:minWidth="240dp"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:minHeight="32dp"
+            android:maxHeight="100dp"
+            android:id="@+id/message_edit_text"
+            />
+        <Button
+            app:layout_constraintBottom_toBottomOf="@id/message_edit_text"
+            app:layout_constraintStart_toEndOf="@id/message_edit_text"
+
+            android:layout_width="wrap_content"
+            android:text="VALID"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:id="@+id/validate_btn"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:id="@+id/footer_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body_layout">
+        <Button
+
+            android:id="@+id/pick_nb_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PICK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pick_mail_button"
+            />
+        <Button
+
+            android:id="@+id/pick_mail_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PICK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pick_nb_button"
+            app:layout_constraintEnd_toStartOf="@id/send_button"
+            />
+        <Button
+
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pick_mail_button"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
